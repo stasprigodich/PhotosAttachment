@@ -1,9 +1,9 @@
 //
 //  ORNavigationController.m
-//  photos-demo
+//  PhotosAttachment
 //
 //  Created by Stanislav Prigodich on 25/10/15.
-//  Copyright © 2015 prigodich. All rights reserved.
+//  Copyright © 2015 Prigodich. All rights reserved.
 //
 
 #import "ORNavigationController.h"
@@ -14,24 +14,28 @@
 
 @implementation ORNavigationController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.navigationBar setBarTintColor:[UIColor colorWithRed:39/255.0f green:41/255.0f blue:43/255.0f alpha:1.0f]];
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName  : [UIColor whiteColor]};
+    [self.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationBar setTranslucent:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)shouldAutorotate
+{
+    return NO;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
-*/
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 @end

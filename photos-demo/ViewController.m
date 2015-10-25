@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "ORCameraAttachmentViewController.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
 
 @end
 
@@ -16,12 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)attachPhotosButtonTapped:(id)sender {
+    ORCameraAttachmentViewController *cameraAttachmentController = [[ORCameraAttachmentViewController alloc] init];
+    cameraAttachmentController.submissionHandler = ^(NSArray * images) {
+        for (int i = 0; i < self.imageViews.count; i++) {
+            [self.imageViews[i] setImage:[UIImage new]];
+        }
+        for (int i = 0; i < images.count; i++) {
+            ORPhotoAttachment* attachment = (ORPhotoAttachment*)images[i];
+            [(UIImageView*)self.imageViews[i] setImage:attachment.image];
+        }
+    };
+    [self presentViewController:[[ORNavigationController alloc] initWithRootViewController:cameraAttachmentController] animated:YES completion:nil];
 }
 
 @end
