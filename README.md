@@ -1,6 +1,5 @@
 # PhotosAttachment
-Library has ability to take photos via camera, from camera roll, crop and zoom
-
+Library has the ability to take photos from the camera, from camera roll, edit photos, and then use them for their own purposes
 
 ## Camera
 
@@ -28,3 +27,10 @@ cameraAttachmentController.submissionHandler = ^(NSArray * images) {
 };
 [self presentViewController:[[ORNavigationController alloc] initWithRootViewController:cameraAttachmentController] animated:YES completion:nil];
 ```
+
+## Contacts
+
+Stanislav Prigodich, stas.prigodich@gmail.com
+
+
+
