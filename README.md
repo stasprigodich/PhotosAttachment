@@ -22,9 +22,9 @@ Preview photos, delete and crop
 Add folder PhotosAttachment from sample project to your project.
 
 ```obj-c
-    ORCameraAttachmentViewController *cameraAttachmentController = [[ORCameraAttachmentViewController alloc] init];
-    cameraAttachmentController.submissionHandler = ^(NSArray * images) {
-        //'images' is array of ORPhotoAttachment objects. get image from image property
-    };
-    [self presentViewController:[[ORNavigationController alloc] initWithRootViewController:cameraAttachmentController] animated:YES completion:nil];
+ORCameraAttachmentViewController *cameraAttachmentController = [[ORCameraAttachmentViewController alloc] init];
+cameraAttachmentController.submissionHandler = ^(NSArray * images) {
+    //'images' is array of ORPhotoAttachment objects. get image from image property
+};
+[self presentViewController:[[ORNavigationController alloc] initWithRootViewController:cameraAttachmentController] animated:YES completion:nil];
 ```
