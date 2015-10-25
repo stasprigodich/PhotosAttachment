@@ -10,7 +10,7 @@ Preview photos, delete and crop
 
 ![Alt][screenshot2_thumb]
 
-## Crop and zoom
+## Rotate and zoom
 ![Alt][screenshot3_thumb]
 
 [screenshot1_thumb]: http://s13.postimg.org/4rrlxbcnr/IMG_1794.jpg
